@@ -29,7 +29,7 @@ public partial class App : Application
             return;
         }
 
-        _single =new Mutex(true, "CabSound.App", out var first);
+        _single = new Mutex(true, "CabSound.App", out var first);
         if (!first)
         {
             if (EventWaitHandle.TryOpenExisting(ShowEventName, out var existing))

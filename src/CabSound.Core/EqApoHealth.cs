@@ -11,7 +11,7 @@ public static class EqApoHealth
 {
     private const string ApoClsid = "{EC1CC9CE-FAED-4822-828A-82A81A6F018F}";
     /// <summary>Windows' "disable all enhancements" switch for one output (1 = effects bypassed).</summary>
-    public const string EnhancementsOffValue ="{1da5d803-d492-4edd-8c23-e0c0ffee7f0e},5";
+    public const string EnhancementsOffValue = "{1da5d803-d492-4edd-8c23-e0c0ffee7f0e},5";
 
     /// <param name="fxProperties">The card's FxProperties values by name; null when the key is missing.</param>
     public static EqApoStatus Status(bool installed, IReadOnlyDictionary<string, object?>? fxProperties)
