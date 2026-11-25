@@ -1,0 +1,39 @@
+# ========================================================
+# 7.1 SSF PINBALL CABINET EQUALIZER APO CONFIGURATION
+# ========================================================
+
+# 1. Device Selection & Global Headroom
+Device: all
+Channel: all
+Preamp: -2 dB
+
+# 2. SSF Channel Remapping / Swap Fix
+# Swaps Side Surround (Rear Exciters) and Rear Surround (Front Exciters)
+Copy: L_TMP=SL R_TMP=SR SL=RL SR=RR RL=L_TMP RR=R_TMP
+
+# 3. Subwoofer & Bass Shaker Processing (Maximized Tactile Force)
+Channel: SUB
+# Allow deep rumble down to 15 Hz (remove the 35 Hz high-pass chokes)
+Filter: ON HP Fc 15 Hz
+# Extend low-pass filter to 120 Hz to capture fast mechanical clicks/solenoid thumps
+Filter: ON LP Fc 120 Hz
+Filter: ON LP Fc 120 Hz
+# Boost tactile impact frequencies (40 Hz - 70 Hz range)
+Filter: ON PK Fc 50 Hz Gain 5 dB Q 1.2
+Filter: ON PK Fc 80 Hz Gain 3 dB Q 1.0
+
+# 4. Playfield Exciters (Front/Rear SSF - Keep deep rumble out of exciters)
+Channel: SL SR RL RR
+Filter: ON HP Fc 90 Hz
+Filter: ON HP Fc 90 Hz
+Filter: ON PK Fc 250 Hz Gain -2 dB Q 1.0
+
+# 5. Backbox Speakers (Main Audio)
+Channel: L R
+Filter: ON HP Fc 90 Hz
+Filter: ON HP Fc 90 Hz
+Filter: ON PK Fc 250 Hz Gain -2 dB Q 1.0
+
+# 6. Global Reset & External File Inclusions
+Channel: all
+Include: PinVolSSF.txt

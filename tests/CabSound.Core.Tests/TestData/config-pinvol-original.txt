@@ -1,0 +1,30 @@
+# Headroom for boosts - applies to all channels
+Channel: all
+Preamp: -5 dB
+
+# Subwoofer: lows only
+Channel: SUB
+Filter: ON HP Fc 35 Hz
+Filter: ON HP Fc 35 Hz
+Filter: ON LP Fc 90 Hz
+Filter: ON LP Fc 90 Hz
+Filter: ON PK Fc 65 Hz Gain 3 dB Q 1.0
+Filter: ON PK Fc 200 Hz Gain -4 dB Q 1.0
+
+# Playfield exciters: keep out of the shaker's range, cut mud
+Channel: SL SR RL RR
+Filter: ON HP Fc 90 Hz
+Filter: ON HP Fc 90 Hz
+Filter: ON PK Fc 250 Hz Gain -2 dB Q 1.0
+
+# Backbox speakers: small drivers can't do deep bass
+Channel: L R
+Filter: ON HP Fc 90 Hz
+Filter: ON HP Fc 90 Hz
+Filter: ON PK Fc 250 Hz Gain -2 dB Q 1.0
+
+Channel: all
+
+Include: PinVolSSF.txt
+Device: all
+

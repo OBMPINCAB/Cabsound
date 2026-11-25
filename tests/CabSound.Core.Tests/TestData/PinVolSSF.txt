@@ -1,0 +1,8 @@
+# Updated by PinVol Automatically -- do not edit
+Stage: post-mix
+Channel: L R
+Preamp: -10 DB
+Channel: RL RR
+Preamp: 10 DB
+Channel: SL SR
+Preamp: 10 DB

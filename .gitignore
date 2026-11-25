@@ -1,0 +1,16 @@
+bin/
+obj/
+.vs/
+*.user
+build-results.txt
+test-results.txt
+probe-log.txt
+backups/
+App/
+.superpowers/
+table-check-*.txt
+
+dist/
+CabSound.json
+CabSound.log
+*.log

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <AssemblyName>CabSound</AssemblyName>
+    <RootNamespace>CabSound.App</RootNamespace>
+    <!-- ThemeMode (Fluent) is marked experimental in WPF -->
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+    <!-- "CS" icon: exe, taskbar button (window default) and tray -->
+    <ApplicationIcon>CabSound.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CabSound.ico" LogicalName="CabSound.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CabSound.Platform\CabSound.Platform.csproj" />
+  </ItemGroup>
+</Project>

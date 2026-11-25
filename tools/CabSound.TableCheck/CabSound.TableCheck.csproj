@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Reads/writes .vpx (OLE compound) files. 2.4.1 is the version proven on this cabinet's tables. -->
+    <PackageReference Include="OpenMcdf" Version="2.4.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CabSound.Core\CabSound.Core.csproj" />
+  </ItemGroup>
+</Project>
