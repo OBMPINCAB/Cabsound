@@ -37,7 +37,7 @@ public sealed record SoundSettings(
     {
         var bb = group == LowCutGroup.Backbox ? cut : LowCutChoices.Cabinet(this, LowCutGroup.Backbox);
         var ex = group == LowCutGroup.Exciters ? cut : LowCutChoices.Cabinet(this, LowCutGroup.Exciters);
-        var rear = group == LowCutGroup.RearExciters ? cut : (RearExciterCut ?? (group == LowCutGroup.Exciters ? null : LowCutChoices.Cabinet(this, LowCutGroup.RearExciters)));
+        var rear = group == LowCutGroup.RearExciters ? cut : RearExciterCut; // null = keeps following the front cut
         return this with { LowCut = LowCutMode.Original, BackboxCut = bb, ExciterCut = ex, RearExciterCut = rear };
     }
 }

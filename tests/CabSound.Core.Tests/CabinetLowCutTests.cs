@@ -42,6 +42,27 @@ public class CabinetLowCutTests
     }
 
     [Fact]
+    public void WithCabinetCut_RearKeepsFollowingFront_WhenAnotherGroupChanges()
+    {
+        var sound = new SoundSettings(ExciterCut: 60)
+            .WithCabinetCut(LowCutGroup.Backbox, 40)
+            .WithCabinetCut(LowCutGroup.Exciters, 90);
+
+        Assert.Null(sound.RearExciterCut);
+        Assert.Equal(90, LowCutChoices.Cabinet(sound, LowCutGroup.RearExciters));
+    }
+
+    [Fact]
+    public void WithCabinetCut_RearOwnCutStays_WhenAnotherGroupChanges()
+    {
+        var sound = new SoundSettings(ExciterCut: 60, RearExciterCut: 50)
+            .WithCabinetCut(LowCutGroup.Backbox, 40)
+            .WithCabinetCut(LowCutGroup.Exciters, 90);
+
+        Assert.Equal(50, LowCutChoices.Cabinet(sound, LowCutGroup.RearExciters));
+    }
+
+    [Fact]
     public void LowCuts_NullIsTheTwoOriginalCuts_ZeroIsNone()
     {
         Assert.Equal([90, 90], EqApoFile.LowCuts(null));
